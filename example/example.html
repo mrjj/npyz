@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>npyz - example</title>
+</head>
+<body>
+<h1>Currently not working!</h1>
+<script src="../dist/npyz.js"></script>
+<script>
+    fetch('/npyz/src/__tests__/data/npy/uint64.npy').then(data=>{
+        console.info(data.body)
+        console.info(npyz.readStream(data.body.getReader()))
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "extends": [
+    "airbnb-base",
+    "plugin:jest/recommended",
+    "plugin:flowtype/recommended"
+  ],
+  "plugins": [
+    "jest",
+    "flowtype"
+  ],
+  "env": {
+    "jest": true,
+    "jest/globals": true
+  },
+  "rules": {
+    "indent": [
+      "warn",
+      2
+    ],
+    "prefer-destructuring": 0,
+    "no-underscore-dangle": 0,
+    "flowtype/define-flow-type": 1,
+    "flowtype/type-id-match": [1, "^([A-Z][a-z0-9]+)+$"],
+    "flowtype/use-flow-type": 1,
+    "comma-dangle": [2, "always-multiline"],
+    "react/destructuring-assignment": 0,
+    "no-param-reassign": 0,
+    "react/prop-types": 0,
+    "camelcase": 0,
+    "object-curly-newline": 0,
+    "implicit-arrow-linebreak": 0,
+    "eslint-disable-next-line object-curly-newline": 0,
+    "import/no-extraneous-dependencies": 0,
+    "jsx-a11y/href-no-hash": 0,
+    "template-tag-spacing": "warn",
+    "JSUnusedGlobalSymbols": 0,
+    "import/prefer-default-export": 0,
+    "newline-per-chained-call": 0,
+    "array-element-newline": 0,
+    "class-methods-use-this": 0
+  }
+}

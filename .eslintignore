@@ -1,0 +1,6 @@
+lib
+lib-es
+umd
+.build-artefacts
+flow-typed
+coverage
