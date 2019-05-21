@@ -1,8 +1,11 @@
-# npyz
+# NPyz
+
+![NPyz](https://raw.githubusercontent.com/mrjj/npyz/HEAD/doc/npyz_logo.png)
 
 `.npy` and `.npz` [NumPy](https://numpy.org) files reader for Node.JS
 
-Version: `0.4.0`
+
+Version: `0.4.1`
 
 ## Usage
 
