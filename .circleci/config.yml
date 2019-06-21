@@ -4,6 +4,7 @@ workflows:
   version: 2.1
   publish-workflow:
     jobs:
+      - test
       - publish:
           filters:
             branches:
