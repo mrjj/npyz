@@ -53,10 +53,23 @@ const ubiqConf = {
     ],
   },
   entry: {
-    index: ['./src/index.js'],
+    index: [
+      '@babel/polyfill',
+      './src/index.js',
+    ],
   },
   module: {
     rules: [
+      {
+        test: /.jsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            babelrc: true,
+          },
+        },
+      },
       {
         test: /\.jsx?$/,
         enforce: 'pre',

@@ -10,6 +10,7 @@ export type LogType = (str: string, options: Object) => void;
  */
 export const log: LogType = (str: string, options = {}) => {
   if ((options.debug === true) || process.env.DEBUG) {
+    // eslint-disable-next-line no-console
     (options.logFn || console.info)(str);
   }
 };

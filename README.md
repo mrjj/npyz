@@ -4,7 +4,7 @@
 
 `.npy` and `.npz` [NumPy](https://numpy.org) files reader for Node.JS
 
-Version: `0.4.1`
+Version: `0.4.2`
 
 [![CircleCI](https://circleci.com/gh/mrjj/npyz.svg?style=svg)](https://circleci.com/gh/mrjj/npyz)
 

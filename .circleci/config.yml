@@ -16,3 +16,6 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: yarn run ci
+      # Publish
+      - run: ~/.profile # to update user npm configuration token from $NPM_TOKEN env variable after all CI code is done
+      - run: npm publish
