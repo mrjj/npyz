@@ -2,10 +2,11 @@ version: 2.1
 
 workflows:
   test-workflow:
-    - test:
-    - build:
-        requires:
-          - test
+    jobs:
+      - test:
+      - build:
+          requires:
+            - test
   publish-workflow:
     jobs:
       - test:
