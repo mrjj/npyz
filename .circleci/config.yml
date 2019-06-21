@@ -43,8 +43,5 @@ jobs:
       # Don't save cache for the security reasons
       - run: npm run build
       - run:
-          name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
-      - run:
           name: Publish package
           command: npm publish
