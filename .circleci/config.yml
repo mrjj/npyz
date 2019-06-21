@@ -19,22 +19,31 @@ jobs:
       - run: npm run test
       - run: npm run flow
       - run: npm run lint
+
+  build:
+    docker:
+      - image: circleci/node:10.16
+    requires:
+      - test
+    steps:
       - run: npm run build
 
   publish:
     docker:
       - image: circleci/node:10.16
     requires:
-      - test
+      - build
     steps:
       - run: npm run publish
 
 workflows:
   test-workflow:
     jobs:
+      - build
       - test
   publish-workflow:
     jobs:
+      - build
       - publish
     branches:
       only:
