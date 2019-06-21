@@ -23,13 +23,13 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "~/repo/package.json" }}-{{ checksum "~/repo/package-lock.json" }}
+            - v1-dependencies-{{ checksum "package.json" }}-{{ checksum "~/repo/package-lock.json" }}
       - run: npm install
       # Don't save cache for the security reasons?
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "~/repo/package.json" }}-{{ checksum "~/repo/package-lock.json" }}
+          key: v1-dependencies-{{ checksum "package.json" }}-{{ checksum "~/repo/package-lock.json" }}
       - run: npm run test
       - run: npm run flow
       - run: npm run lint
@@ -40,14 +40,7 @@ jobs:
       - image: circleci/node:10.16
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "~/repo/package.json" }}-{{ checksum "~/repo/package-lock.json" }}
       - run: npm install
-      # Don't save cache for the security reasons?
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "~/repo/package.json" }}-{{ checksum "~/repo/package-lock.json" }}
+      # Don't save cache for the security reasons
       - run: npm run build
-      - run: npm run publish
+      - run: npm publish
