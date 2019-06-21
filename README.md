@@ -6,7 +6,7 @@
 
 Version: `0.4.2`
 
-[![CircleCI](https://circleci.com/gh/mrjj/npyz.svg?style=svg)](https://circleci.com/gh/mrjj/npyz)
+`master` status: [![CircleCI](https://circleci.com/gh/mrjj/npyz/tree/master.svg?style=svg)](https://circleci.com/gh/mrjj/npyz/tree/master)
 
 ## Usage
 

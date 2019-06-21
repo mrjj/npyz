@@ -26,8 +26,17 @@ jobs:
       - image: circleci/node:10.16
     requires:
       - test
-    only:
-      - master
-      - /rc-.*/
     steps:
       - run: npm run publish
+
+workflows:
+  test-workflow:
+    jobs:
+      - test
+  publish-workflow:
+    jobs:
+      - publish
+    branches:
+      only:
+        - master
+        - /rc-.*/
