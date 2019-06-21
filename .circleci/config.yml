@@ -15,12 +15,13 @@ workflows:
           requires:
             - test
       - publish:
+          filters:
+            branches:
+              only:
+                - master
+                - /rc-.*/
           requires:
             - build
-    branches:
-      only:
-        - master
-        - /rc-.*/
 
 jobs:
   test:
