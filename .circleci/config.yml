@@ -1,6 +1,20 @@
-version: 2
-jobs:
+version: 2.1
 
+workflows:
+  test-workflow:
+    jobs:
+      - build
+      - test
+  publish-workflow:
+    jobs:
+      - build
+      - publish
+    branches:
+      only:
+        - master
+        - /rc-.*/
+
+jobs:
   test:
     docker:
       - image: circleci/node:10.16
@@ -35,17 +49,3 @@ jobs:
       - build
     steps:
       - run: npm run publish
-
-workflows:
-  test-workflow:
-    jobs:
-      - build
-      - test
-  publish-workflow:
-    jobs:
-      - build
-      - publish
-    branches:
-      only:
-        - master
-        - /rc-.*/
