@@ -4,7 +4,6 @@ workflows:
   version: 2.1
   publish-workflow:
     jobs:
-      - test
       - publish:
           filters:
             branches:
@@ -43,4 +42,9 @@ jobs:
       - run: npm install
       # Don't save cache for the security reasons
       - run: npm run build
-      - run: npm publish
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+      - run:
+          name: Publish package
+          command: npm publish
